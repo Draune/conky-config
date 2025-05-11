@@ -1,8 +1,8 @@
 # My conky config
 
-![desktop_image_with_conky](https://github.com/Draune/conky-config/blob/master/desktop_and_conky.png)
+![desktop_image_with_conky](https://github.com/Draune/conky-config/blob/master/screenshots/desktop_and_conky.png)
 
-![conky_image](https://github.com/Draune/conky-config/blob/master/conky.png)
+![conky_image](https://github.com/Draune/conky-config/blob/master/screenshots/conky.png)
 
 To launch it, simply run (backup your .conky before):
 
