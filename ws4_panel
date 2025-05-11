@@ -47,6 +47,6 @@ conky.config = {
 };
 
 conky.text =[[
-${if_match ${exec grep -c "4" /tmp/conky_current_ws} > 0}${color0}${font 'Cousine Nerd Font:size=12}4:${font}${cat /tmp/conky_ws4}${color}
-${else}${color1}${font 'Cousine Nerd Font:size=12}4:${font}${cat /tmp/conky_ws4}${color}
+${if_match ${exec grep -c "4" /tmp/conky_current_ws} > 0}${color0}${font 'Cousine Nerd Font:size=12:style=bold'}4:${font}${cat /tmp/conky_ws4}${color}
+${else}${color1}${font 'Cousine Nerd Font:size=12:style=bold'}4:${font}${cat /tmp/conky_ws4}${color}
 ${endif}]];

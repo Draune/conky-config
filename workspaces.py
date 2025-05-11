@@ -27,7 +27,11 @@ for i in range(1, nb_workspaces+1):
 icons_list = [["discord", ""],
               ["emacs", ""],
               ["firefox",""],
-              ["", ""]] # default
+              ["xonsh", ""],
+              ["gdb", ""],
+              ["setting", ""],
+              ["signal", "󰻞"],
+              ["", ""]] # default
 
 output = subprocess.check_output(["wmctrl", "-l"]).decode()
 output = output.split("\n")
