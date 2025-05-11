@@ -9,7 +9,7 @@
 ## Requirements
 
 ``` shell
-pip install i3ipc
+sudo apt install wmctrl
 ```
 
 ## Install

@@ -1,39 +1,45 @@
-import i3ipc
-# Connexion à i3
-i3 = i3ipc.Connection()
+import subprocess
 
+# Current workspace
 current_ws_file = open("/tmp/conky_current_ws", "w")
 
+output = subprocess.check_output(["wmctrl", "-d"]).decode()
+output = output.split("\n")
+for line in output:
+    line = line.split()
+    if line[1] == "*":
+        current_ws_file.write(str(int(line[0])+1))
+
+current_ws_file.close()
+
+# Windows in each workspace
 ws_files_prefix = "/tmp/conky_ws"
 ws_files = []
 
+# if you want to change the number of workspaces, change this variable
+nb_workspaces=9
 
-for i in range(1, 10):
+for i in range(1, nb_worspaces+1):
     ws_files.append(open(ws_files_prefix+str(i), "w"))
     ws_files[i-1].write(f"{i}:")
 
-workspaces = i3.get_workspaces()
-for ws in workspaces:
-    if ws.focused:
-        current_ws_file.write(f"{ws.num}")
+icons_list = [["discord", ""],
+              ["emacs", ""],
+              ["firefox",""],
+              ["", ""]] # default
 
-tree = i3.get_tree()
-char = ""
-for window in tree.leaves():
-    if "discord" in window.name.lower():
-        char = " "
-    elif "emacs" in window.name.lower():
-        char = " "
-    elif "firefox" in window.name.lower():
-        char = " "
-    elif "conky" in window.name.lower():
-        char = ""
-    else:
-        char = " "
-    window_workspace = window.workspace().num
-    if window_workspace  < 10:
-        ws_files[window_workspace-1].write(char)
+output = subprocess.check_output(["wmctrl", "-l"]).decode()
+output = split("\n")
+for line in output:
+    window_name = line.lower()
+    line = line.split()
+    num_workspace = int(line[1])
+    if (num_workspace > nb_workspaces or num_workspace < 0):
+        continue
 
-current_ws_file.close()
+    for icon in icons_list:
+        if icon[0] in window_name:
+            ws_files[window_workspace].write(" "+icon[1])
+
 for f in ws_files:
     f.close()
