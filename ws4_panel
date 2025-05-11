@@ -41,12 +41,12 @@ conky.config = {
 
 	use_xft = true,
 	xftalpha = 0.1,
-	font = 'Cousine Nerd Font:size=12',
+	font = 'Symbols Nerd Font Mono:size=12',
     color0 = '#fe8019',
     color1 = '#ebdbb2',
 };
 
 conky.text =[[
-${if_match ${exec grep -c "4" /tmp/conky_current_ws} > 0}${color0}${cat /tmp/conky_ws4}${color}
-${else}${color1}${cat /tmp/conky_ws4}${color}
+${if_match ${exec grep -c "4" /tmp/conky_current_ws} > 0}${color0}${font 'Cousine Nerd Font:size=12}4:${font}${cat /tmp/conky_ws4}${color}
+${else}${color1}${font 'Cousine Nerd Font:size=12}4:${font}${cat /tmp/conky_ws4}${color}
 ${endif}]];

@@ -22,10 +22,10 @@ nb_workspaces=9
 
 for i in range(1, nb_workspaces+1):
     ws_files.append(open(ws_files_prefix+str(i), "w"))
-    ws_files[i-1].write(f"{i}:")
+    # ws_files[i-1].write(f"{i}:")
 
-icons_list = [["discord", ""],
-              ["emacs", ""],
+icons_list = [["discord", ""],
+              ["emacs", ""],
               ["firefox",""],
               ["", ""]] # default
 
@@ -42,7 +42,7 @@ for line in output:
 
     for icon in icons_list:
         if icon[0] in window_name:
-            ws_files[num_workspace].write(" "+icon[1])
+            ws_files[num_workspace].write(""+icon[1])
             break
 
 

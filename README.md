@@ -8,6 +8,10 @@
 
 ## Requirements
 
+You will need 'Cousine Nerd Font' and 'Symbols Nerd font Mono' installed in your /usr/share/fonts (just unzip them there and do `fc-cache -fv`).
+
+You will also need wmctrl:
+
 ``` shell
 sudo apt install wmctrl
 ```
