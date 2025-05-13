@@ -42,7 +42,10 @@ for window in tree.leaves():
 
     for icon in icons_list:
         if icon[0] in window_name:
-            ws_files[num_workspace-1].write(""+icon[1])
+            if window.focused:
+                ws_files[num_workspace-1].write(""+icon[1])
+            else:
+                ws_files[num_workspace-1].write(""+icon[1])
             break
 
 for f in ws_files:
