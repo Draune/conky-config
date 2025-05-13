@@ -45,6 +45,7 @@ conky.config = {
 };
 
 conky.text = [[
-        ${execi 60 ip route | grep '^default' | awk '{print $5}'} ${execi 60 bash ~/.conky/repl_iface.sh}
+ ${execi 60 ip route | grep '^default' | awk '{print $5}'} ${execi 60 bash ~/.conky/repl_iface.sh}
+ ┌────────────────
 DOWN_${downspeedgraph wlp1s0 25,150}‾${downspeedf wlp1s0}kiB/s
 ]];

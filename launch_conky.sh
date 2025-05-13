@@ -16,6 +16,7 @@ conky -c ~/.conky/ws3_panel &
 conky -c ~/.conky/ws4_panel &
 conky -c ~/.conky/ws5_panel &
 conky -c ~/.conky/ws6_panel &
-conky -c ~/.conky/ws7_panel &
-conky -c ~/.conky/ws8_panel &
-conky -c ~/.conky/ws9_panel &
+# Reduced the number off visible workspaces since I never use more than 6
+# conky -c ~/.conky/ws7_panel &
+# conky -c ~/.conky/ws8_panel &
+# conky -c ~/.conky/ws9_panel &

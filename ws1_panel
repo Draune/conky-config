@@ -14,7 +14,7 @@ conky.config = {
 	draw_outline = false,
 	draw_shades = false,
 
-	gap_x = 1175,
+	gap_x = 1225,
 	gap_y = 55 ,
 	net_avg_samples = 2,
 	no_buffers = true,
@@ -32,7 +32,7 @@ conky.config = {
 
 	minimum_width = 0, minimum_height = 0,
 	stippled_borders = 0,
-	update_interval = 1.0,
+	update_interval = 0.3,
 	uppercase = false,
 	use_spacer = 'none',
 
@@ -47,7 +47,7 @@ conky.config = {
 };
 
 conky.text =[[
-${execi 0.5 python3 ~/.conky/workspaces.py}${if_match ${exec grep -c "1" /tmp/conky_current_ws} > 0}${color0}${font 'Cousine Nerd Font:size=12:style=bold'}1:${font}${cat /tmp/conky_ws1}${color}
+${execi 0.3 python3 ~/.conky/workspaces.py}${if_match ${exec grep -c "1" /tmp/conky_current_ws} > 0}${color0}${font 'Cousine Nerd Font:size=12:style=bold'}1:${font}${cat /tmp/conky_ws1}${color}
 ${else}${color1}${font 'Cousine Nerd Font:size=12:style=bold
 '}1:${font}${cat /tmp/conky_ws1}${color}
 ${endif}]];
