@@ -25,8 +25,9 @@ for i in range(1, nb_workspaces+1):
 icons_list = [["discord", ""],
               ["emacs", ""],
               ["firefox",""],
-              ["xonsh", ""],
+              ["terminal", ""],
               ["gdb", ""],
+              ["exegol", ""],
               ["setting", ""],
               ["signal", "󰻞"],
               ["", ""]] # default
